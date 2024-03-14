@@ -1,0 +1,4 @@
+0    106
+1     52
+2     25
+Name: count, dtype: int64

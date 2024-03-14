@@ -1,15 +1,22 @@
-# Specify the base image as Ubuntu
-FROM ubuntu
+FROM ubuntu:20.04
 
-# Install required packages
-RUN apt-get update && apt-get install -y python3 python3-pip
-RUN pip3 install pandas numpy seaborn matplotlib scikit-learn scipy
+# Update package lists and install necessary dependencies
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-dev \
+    && pip3 install --upgrade pip \
+    && pip3 install pandas numpy seaborn matplotlib scikit-learn scipy \
+    && apt-get install -y docker.io
 
-# Create a directory inside the container
+# Create directory for the dataset
 RUN mkdir -p /home/doc-bd-a1/
 
-# Move the dataset file to the container
+# Copy the dataset into the container
 COPY train.csv /home/doc-bd-a1/
 
-# Open the bash shell upon container startup
-CMD ["/bin/bash"]
+# Set the working directory
+WORKDIR /home/doc-bd-a1/
+
+# Specify the command to run when the container starts
+CMD ["python3", "load.py", "/home/doc-bd-a1/train.csv"]

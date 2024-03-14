@@ -1,0 +1,1 @@
+1. There are 183 rows and 12 columns in the dataset.
