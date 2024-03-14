@@ -9,7 +9,7 @@ RUN pip3 install pandas numpy seaborn matplotlib scikit-learn scipy
 RUN mkdir -p /home/doc-bd-a1/
 
 # Move the dataset file to the container
-COPY dataset_file_name /home/doc-bd-a1/
+COPY train.csv /home/doc-bd-a1/
 
 # Open the bash shell upon container startup
 CMD ["/bin/bash"]
