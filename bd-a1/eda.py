@@ -17,7 +17,7 @@ def exploratory_data_analysis(file_path):
 
     print("Exploratory data analysis insights saved successfully.")
 
-    subprocess.run(["python3", "dper.py", file_path])
+    subprocess.run(["python3", "dpre.py", file_path])
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
