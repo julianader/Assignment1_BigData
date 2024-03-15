@@ -3,12 +3,9 @@ import sys
 import subprocess
 from sklearn.preprocessing import OneHotEncoder
 
-def remove_duplicates_and_missing_values(df):
+def remove_duplicates(df):
     # Removing duplicate rows
     df.drop_duplicates(inplace=True)
-    # Removing rows with missing values
-    df.dropna(inplace=True)
-    return df
 
 def fill_missing_values(df):
     # Filling missing values with specified value
