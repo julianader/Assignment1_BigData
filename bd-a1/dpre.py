@@ -59,7 +59,7 @@ def data_preprocessing(file_path):
     df = pd.read_csv(file_path)
 
     # Data Cleaning
-    df = remove_duplicates_and_missing_values(df)
+    df = remove_duplicates(df)
     df= fill_missing_values(df)
     
     # Data Transformation
