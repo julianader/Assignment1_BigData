@@ -1,0 +1,3 @@
+git repo : https://github.com/julianader/Assignment1_BigData
+
+docker image name on docker hub : julianaguib/bd-a1-image
